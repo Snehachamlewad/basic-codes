@@ -1,0 +1,286 @@
+
+1)Swap two integers without using the third variable in C#
+
+==> 
+	using System;
+
+	public class SwapNumbers
+	{
+		public static void Main(string[] args)
+		{
+			int a = 10, b = 20;
+			Console.WriteLine("Before Swapping => a = "+a+ " & b = "+b);
+			a = a * b;  // a=200
+			b = a / b;  // b=10
+			a = a / b;  // a=20
+			
+			Console.WriteLine("After Swapping => a = "+a+ " & b = "+b);
+		}
+	}
+	
+============================================================================================	
+	
+2)Fibonacci Series Program in C#
+
+==> 3rd Number will be Addition of 1st & 2nd Number
+
+	using System;
+
+	public class Demo
+	{
+		public static void Main(string[] args)
+		{
+		   int num1=0,num2=1,num3,len;
+		   
+		   Console.WriteLine("Enter Length of Fibonacci");
+		   len = Int32.Parse(Console.ReadLine());
+		   
+		   Console.Write(num1+" "+num2+" ");
+		   
+		   for(int i=2;i<=len;++i)
+		   {
+			   num3 = num1 + num2;
+			   Console.Write(num3+" ");
+			   
+			   num1=num2;
+			   num2=num3;
+		   }
+		}
+	}
+	
+==============================================================================================	
+	
+3)Prime Numbers in C#
+
+==> A Number which can be only devided by Itself or 1
+
+	using System;
+	class PrimeNumnber
+	{
+	  public static void Main() 
+	  {
+		Console.WriteLine("Enter the Numbers : ");
+		int num = Int32.Parse(Console.ReadLine());
+		
+		for(int i=2; i<num; i++)
+		{
+			if(num%i==0)
+			{
+				Console.WriteLine("Not a Prime Number");
+				break;
+			}
+			else
+			{
+				Console.WriteLine("Prime Number");
+				break;
+			}
+		}
+	  }
+	}
+	
+==============================================================================================		
+	
+4) Palindrome Program in C#
+
+==> 1st digit and Last Digit is Same (ex. 121, 131, 787)	
+
+	using System;
+
+	public class SwapNumbers
+	{
+		public static void Main(string[] args)
+		{
+		   int n, temp, r, sum=0;
+		   
+		   Console.WriteLine("Enter the Number : ");
+		   n = Int32.Parse(Console.ReadLine());
+		   temp=n;
+		   
+		   while(n>0)
+		   {
+			   r = n % 10;
+			   sum = (sum * 10) + r;
+			   n = n / 10;
+		   }
+		   
+		   if(temp==sum)
+		   {
+			   Console.Write("Number is Palindrome.");      
+		   }
+		   else
+		   {
+			   Console.Write("Number is not Palindrome"); 
+		   }
+			
+		}
+	}
+	
+==============================================================================================	
+
+5) Sum of Digits Program in C#
+==> 
+
+	using System;
+
+	public class SumDigits
+	{
+		public static void Main(string[] args)
+		{
+		   int r,n,sum=0;
+		   
+		   Console.WriteLine("Enter the Number : ");
+		   n = Int32.Parse(Console.ReadLine());   // n=78
+		   
+		   while(n>0)
+		   {
+			   r = n%10;        // 8, 7
+			   sum = sum + r;   // 8, 15
+			   n = n/10;        // 7, 0
+		   }
+		   Console.WriteLine("Sum of Numbers = "+sum);
+		   
+		}
+	}
+	
+
+==============================================================================================		
+	
+6) Decimal to Binary Conversion in C#
+==>
+
+	using System;  
+	  public class Demo  
+	   {  
+		 public static void Main(string[] args)  
+		  {  
+		   int  n, i;       
+		   int[] a = new int[10];     
+		   Console.Write("Enter the number to convert: ");    
+		   n= int.Parse(Console.ReadLine());     
+		   for(i=0; n>0; i++)      
+			{      
+			 a[i]=n%2;      
+			 n= n/2;    
+			}      
+		   Console.Write("Binary of the given number= ");      
+		   for(i=i-1 ;i>=0 ;i--)      
+		   {      
+			Console.Write(a[i]);      
+		   }                 
+		  }  
+	  }  
+	  
+==============================================================================================		  
+	  
+7) How to Reverse a String in C#
+==>
+	
+	using System;
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string Str;
+			string reversestring = "";
+			
+			int Length;
+			Console.Write("Enter A String : ");
+			Str = Console.ReadLine();
+			Length = Str.Length - 1;
+			Console.WriteLine("String Length is : "+Length);
+			
+			while (Length >= 0)
+			{
+				reversestring = reversestring + Str[Length];
+				Length--;
+			}
+			Console.WriteLine("Reverse  String  Is  {0}", reversestring);
+			Console.ReadLine();
+		}
+	}
+	
+==============================================================================================	
+
+8) Reverse Each Word in a Given String in C#
+==>
+	
+	using System;
+	using System.Linq;
+	class Demo {
+	   static void Main() {
+		  // original string
+		  string str = "Hello World";
+		  // reverse the string 
+		  string res = string.Join(" ", str.Split(' ').Select(s => new String(s.Reverse().ToArray())));
+		  Console.WriteLine(res);
+	   }
+	}
+	
+==============================================================================================
+
+9) How to Remove Duplicate Characters From a String in C#	
+==> 
+	using System;
+	using System.Collections.Generic;
+
+	public class RemoveDuplicateChar
+	{
+		public static void Main(string[] args)
+		{
+			Console.WriteLine ("Enter the String : ");
+			string mystring = Console.ReadLine();
+			var unique = new HashSet<char>(mystring);
+			foreach(char c in unique)
+			{
+				Console.Write(c);
+			}
+		}
+	}
+	
+==============================================================================================	
+
+10) Example of Boxing and Unboxing 
+==>
+	using System;
+
+	public class HelloWorld
+	{
+		public static void Main(string[] args)
+		{
+			int i=10;
+			object Obj = i; //Boxing
+		
+			int j = (int) Obj; //Unboxing
+		
+		
+			Console.WriteLine(j);
+
+		}
+	}
+
+===============================================================================================
+
+11) Set Size of the 1st Array as 3
+==>
+	jaggedArray[0] = new int[3];
+
+	Initialize the First Array:- 
+	
+	jaggedArray[0][0] = 1;
+	jaggedArray[0][1] = 3;
+	jaggedArray[0][2] = 5;
+
+===============================================================================================
+
+trigger, view, function, join, subquery, stored procedure syntax 
+
+A trigger is a special type of stored procedure that automatically runs when an event occurs in the database server. 
+DML triggers run when a user tries to modify data through a data manipulation language (DML) event. DML events are INSERT, UPDATE, or DELETE statements on a table or view.
+
+
+View in SQL is a kind of Virtual Table, which means that it does not exist in the database but is created by a query.
+View shows specific information from different tables or a single table in a database. 
+It is created by selecting rows and columns from different tables and then saving them as a View. 
+
+directives are used to manipulate the DOM. By using Angular directives, 
+you can change the appearance, behavior or a layout of a DOM element. It also helps you to extend HTML.

@@ -1,0 +1,103 @@
+Why is containerization?
+Containerization allows developers to create and deploy applications faster and more securely,
+
+what is docker?
+Docker is a very popular and powerful open-source containerization platform that is used for building, deploying, and running applications.
+
+what is containerazation?
+A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
+
+what docker container image?
+A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+
+what is docker image?
+A Docker image contains application code, libraries, tools, dependencies and other files needed to make an application run. 
+
+what is sonarqube?
+SonarQube is a Code Quality Assurance tool that collects and analyzes source code, and provides reports for the code quality of your project.
+
+what is sonarqube analysis?
+During analysis, data is requested from the server, the files provided to the analysis are analyzed, and the resulting data is sent back to the server at the end in the form of a report, which is then analyzed asynchronously server-side.
+
+How to trigger pipeline automatically?
+
+security-lib-ci - This pipeline runs first. yml Copy. ...
+app-ci - This pipeline has a pipeline resource trigger that configures the app-ci pipeline to run automatically every time a run of the security-lib-ci pipeline completes. YAML Copy.
+
+What is difference between git and github?
+Git is a version control system that lets you manage and keep track of your source code history. GitHub is a cloud-based hosting service that lets you manage Git repositories. If you have open-source projects that use Git, then GitHub is designed to help you better manage them. 
+git installed locally and github hosted on cloud.
+git is command line tool and github is administered through web.
+
+what are git command?
+git config - git config –global user.name “[name]”  
+Usage: git config –global user.email “[email address]”
+This command sets the author name and email address respectively to be used with your commits.
+
+git init
+Usage: git init [repository name]
+This command is used to start a new repository.
+
+git clone
+Usage: git clone [url]  
+This command is used to obtain a repository from an existing URL.
+
+git add
+Usage: git add [file]  
+This command adds a file to the staging area
+
+git commit
+Usage: git commit -m “[ Type in the commit message]”  
+This command records or snapshots the file permanently in the version history.
+
+Usage: git commit -a  
+This command commits any files you’ve added with the git add command and also commits any files you’ve changed since then.
+
+git reset
+Usage: git reset [file]  
+This command unstages the file, but it preserves the file contents.
+
+git status
+Usage: git status  
+This command lists all the files that have to be committed.
+
+git rm
+Usage: git rm [file]  
+This command deletes the file from your working directory and stages the deletion.
+
+git branch
+Usage: git branch  
+This command lists all the local branches in the current repository.
+
+git checkout
+Usage: git checkout [branch name]  
+This command is used to switch from one branch to another.
+
+git merge
+Usage: git merge [branch name]  
+This command merges the specified branch’s history into the current branch.
+
+git remote
+Usage: git remote add [variable name] [Remote Server Link]  
+This command is used to connect your local repository to the remote server.
+
+git push
+Usage: git push [variable name] master  
+This command sends the committed changes of master branch to your remote repository.
+
+git pull
+Usage: git pull [Repository Link]  
+This command fetches and merges changes on the remote server to your working directory.
+
+What is jenkins and why it is used?
+jenkins is a Java-based open-source automation platform with plugins designed for continuous integration. It is used to continually create and test software projects, making it easier for developers and DevOps engineers to integrate changes to the project and for consumers to get a new build.
+
+what is virtual machine?
+A virtual machine is a computer file, typically called an image, that behaves like an actual computer. It can run in a window as a separate computing environment, often to run a different operating system—or even to function as the user's entire computer experience—as is common on many people's work computers.
+
+Difference between virtual machine and container?
+A container is a software code package containing an application’s code, its libraries, and other dependencies. Containerization makes your applications portable so that the same code can run on any device. A virtual machine is a digital copy of a physical machine.
+
+
+
+

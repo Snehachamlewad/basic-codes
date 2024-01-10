@@ -1,0 +1,297 @@
+Abstraction :- 
+-----------
+
+	It is the Process of Showing only Necessary Information by Hiding Unnecessary Details From End User, is Known as Abstraction.
+	
+	Example :- the laptop is a best example of abstraction in c#. A laptop consists of many things such as a processor, RAM, motherboard, 
+			LCD screen, camera, USB ports, battery, speakers, etc. To use it, we need to know how to operate the laptop by switching it on, 
+			and we don’t need to know how internally all the parts are working. Here, the laptop is an object designed to expose only required 
+			features by hiding its implementation details.
+	
+	Code Example :-
+
+	using System;
+
+	public abstract class Student
+	{
+		public abstract void StudentInfo();
+	}
+
+	public class Teacher : Student
+	{
+		public Teacher()
+		{
+			Console.WriteLine("Teacher Class Constructor Called");
+		}
+		public override void StudentInfo()
+		{
+			string Name = "Ankush";
+			Console.WriteLine("Student Name is :- "+Name);
+		}
+	}
+
+	class Program
+	{
+		public static void Main(string[] args)
+		{
+			Teacher T = new Teacher();
+			T.StudentInfo();
+		}
+	}
+	
+	
+Encapsulation :-
+------------- 
+		
+		The Process of Wrapping up the Data Into a Single Unit is Known as Encapsulation.
+		
+		Example :- Medicine Capsule Tab -
+				   In Medicine Capsule Tab, There are Various Types of Medicines in fine Particles are wrapped into a Single Capsule Tab.
+		
+		Code Example :-
+		
+		using System;
+
+		public class Student
+		{
+				public int ID { get; set; }  
+				public string Name { get; set; }  
+				public string Location { get; set; }  
+		}
+			
+		class Program
+		{
+			 static void Main(string[] args)
+			   {
+					Student obj = new Student();  
+					 
+					obj.ID = 101;  
+					obj.Name = "Tikaram";  
+					obj.Location = "Mumbai";  
+					  
+					Console.WriteLine("Student ID       = "+obj.ID);  
+					Console.WriteLine("Student Name     = "+obj.Name);  
+					Console.WriteLine("Student Location = "+obj.Location);  
+			   }
+		}
+	
+
+Polymorphism :-
+------------
+
+		There are two types of polymorphism in C#: compile time polymorphism and runtime polymorphism. 
+		Compile time polymorphism is achieved by method overloading and operator overloading in C#. It is also known as static binding or early binding. 
+		Runtime polymorphism is achieved by method overriding which is also known as dynamic binding or late binding.
+		
+		Example:- 
+		Women in the society - The same woman performs different role in society.The woman can be wife of someone, mother of her child, 
+							   can be at role of manager in organisation and many more at the same time. But the Woman is only one. 
+							   So, same woman performing different roles is polymorphism.
+							   
+		Method Overloading :-
+		------------------
+		
+		The Method Which is Having Same Method Name with Different Parameters is known as Method Overloading.
+		
+		Code Example :-
+		
+		using System;
+
+		public class Student
+		{
+			public void StudentInfo(string Name, int Roll_No)
+			{
+				Console.WriteLine("Student Name        = "+Name);
+				Console.WriteLine("Student ROll Number = "+ Roll_No);
+			}
+			
+			public void StudentInfo(int Age, string Location)
+			{
+				Console.WriteLine("Student Age      = "+Age);
+				Console.WriteLine("Student Location = "+ Location);
+			}
+		}
+		class Program
+		{
+			public static void Main(string[] args)
+			{
+			   Student obj = new Student();
+			   //obj.StudentInfo("Tikaram",25);
+			   obj.StudentInfo(23,"Bhusawal");
+			}
+		}
+		
+		Method Overriding :-
+		------------------
+		
+		The Method Which is Having Same Method Name with Same Parameters is known as Method Overloading.
+		
+		Code Example :-
+		
+		using System;
+
+		public class Student
+		{
+			public virtual void StudentInfo(string Name, int Roll_No)
+			{
+				Console.WriteLine("Student Name        = "+Name);
+				Console.WriteLine("Student ROll Number = "+ Roll_No);
+			}
+			
+		}
+		public class Teacher : Student
+		{
+			 public override void StudentInfo(string Name, int Roll_No)
+			{
+				Console.WriteLine("Student Name        = "+Name);
+				Console.WriteLine("Student ROll Number = "+ Roll_No);
+			}
+		}
+		class Program
+		{
+			public static void Main(string[] args)
+			{
+			   Teacher obj = new Teacher();
+			   obj.StudentInfo("Tikaram",82);
+			}
+		}
+		
+Inheritance :-
+-----------
+
+		By Using Inheritance, we can use code, methods, Properties of base class to Inherited class.
+		Using inheritance, one or more classes can derive from an existing class. 
+		The existing class is called a base class, and the inherited class is called a derived or inherited class.
+		
+		Types of Inheritance :-
+		
+		1) Single Inheritance :- When one class inherits another class, it is known as single level inheritance
+
+			Example :-
+			
+			using System;
+
+			public class Student
+			{
+				public int age = 20;
+				public void StudentInfo(string Name, int Roll_No)
+				{
+					Console.WriteLine("Student Name        = "+Name);
+					Console.WriteLine("Student ROll Number = "+ Roll_No);
+				}
+				
+			}
+			public class Teacher : Student
+			{
+				public string subject = "Math";
+				public void TeacherInfo(string Name, string Address)
+				{
+					Console.WriteLine("Name of the Teacher    = "+Name);
+					Console.WriteLine("Address of the Teacher = "+Address);
+				}
+			}
+			class Program
+			{
+				public static void Main(string[] args)
+				{
+				   Teacher obj = new Teacher();
+				   obj.StudentInfo("Tikaram",82);
+				   //obj.TeacherInfo("Ankita","Mumbai");
+				   
+				   Console.WriteLine("Student Age = "+obj.age);
+				   Console.WriteLine("Teacher Subject = "+obj.subject);
+				}
+			}
+			
+		2) Multi-Level Inheritance :-
+		
+			When one class inherits another class which is further inherited by another class, it is known as multi level inheritance.
+			Inheritance is transitive so the last derived class acquires all the members of all its base classes.
+			
+		  Example :-
+			
+			using System;
+
+			public class Student
+			{
+				public int age = 20;
+				public void StudentInfo(string Name, int Roll_No)
+				{
+					Console.WriteLine("-----------------------------------------");
+					Console.WriteLine("Student Name        = "+Name);
+					Console.WriteLine("Student ROll Number = "+ Roll_No);
+				}
+				
+			}
+			public class Teacher : Student
+			{
+				public string subject = "Math";
+				public void TeacherInfo(string Name, string Address)
+				{
+					Console.WriteLine("-----------------------------------------");
+					Console.WriteLine("Name of the Teacher    = "+Name);
+					Console.WriteLine("Address of the Teacher = "+Address);
+				}
+			}
+			public class Principle : Teacher
+			{
+				public void PrincipleInfo(string Name, string Address)
+				{
+					Console.WriteLine("-----------------------------------------");
+					Console.WriteLine("Name of the Principle    = "+Name);
+					Console.WriteLine("Address of the Principle = "+Address);
+				}
+			}
+			class Program
+			{
+				public static void Main(string[] args)
+				{
+				   Principle obj = new Principle();
+				   obj.StudentInfo("Tikaram",82);
+				   //obj.TeacherInfo("Ankita","Mumbai");
+				   obj.PrincipleInfo("Prof.Satyam Kumar","Mumbai");
+				   
+				   //Console.WriteLine("Student Age = "+obj.age);
+				   //Console.WriteLine("Teacher Subject = "+obj.subject);
+				}
+			}
+			
+		3) Multiple Inheritance :-
+			
+			Multiple Inheritance can be Achieved by Using Interface.
+			
+			Example :-
+			
+			public interface IDog
+			{
+				public void Dog();
+			}
+			public interface ICat
+			{
+				public void Cat();
+			}
+			public class Animal : IDog, ICat
+			{
+				public void Dog()
+				{
+					Console.WriteLine("Dog Method .......... ");
+				}
+				
+				public void Cat()
+				{
+					Console.WriteLine("Cat Method .......... ");
+				}
+			}
+			public class Program
+			{
+				public static void Main(string[] args)
+				{
+					Animal obj = new Animal();
+					obj.Dog();
+					obj.Cat();
+				}
+			}
+			
+		4)Hierarchical Inheritance:-
+		
+		5)Hybrid Inheritance :-
